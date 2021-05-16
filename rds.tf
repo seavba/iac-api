@@ -20,5 +20,6 @@ resource "aws_db_instance" "elixirDB" {
   db_subnet_group_name                = "${aws_db_subnet_group.elixir_db_sub_g.name}"
   skip_final_snapshot                 = var.elixirDB_rds_skip_final_snapshot
   apply_immediately                   = var.elixirDB_rds_apply_immediately
+  vpc_security_group_ids              = ["${aws_security_group.rds.id}"]
   tags                                = local.tags
 }

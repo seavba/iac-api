@@ -112,3 +112,22 @@ resource "aws_db_subnet_group" "elixir_db_sub_g" {
   subnet_ids = aws_subnet.private.*.id
   tags = local.tags
 }
+
+resource "aws_security_group" "rds" {
+  name        = "rds_security_group"
+  description = "RDS PGSQL server"
+  vpc_id      = "${aws_vpc.elixir_vpc.id}"
+  ingress {
+    from_port       = 5432
+    to_port         = 5432
+    protocol        = "tcp"
+    security_groups = ["${aws_security_group.load_balancer_security_group.id}","${aws_security_group.service_security_group.id}"]
+  }
+  # Allow all outbound traffic.
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
