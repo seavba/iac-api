@@ -21,7 +21,7 @@ variable "vpc_cdir" {
 }
 
 variable "tg_group" {
-  default = "/"
+  default = "/api/beers"
 }
 
 

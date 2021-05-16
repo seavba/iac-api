@@ -49,7 +49,7 @@ resource "aws_lb_target_group" "elixirTG" {
   target_type = "ip"
   vpc_id      = "${aws_vpc.elixir_vpc.id}"
   health_check {
-    matcher = "200,301,302,404"
+    matcher = "200,301,302"
     path = "${var.tg_group}"
     timeout = 120
     interval = 300
