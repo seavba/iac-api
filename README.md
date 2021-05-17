@@ -12,12 +12,18 @@ The Infrastructure provided by this repo consists on an AWS ECS container over a
 
 Security and target Groups, IAM policies, VPC and so on, are already provided by this repo.
 
- ## Getting Started
+## Getting Started
 
+#### Pre-requisites
 > :warning: Create ECR image (if you didn't do it before)
 
-[Elixir-api repo for creating image](https://github.com/seavba/elixir-api)
+- [Elixir-api repo for creating image](https://github.com/seavba/elixir-api)
 
+- AWS CLI must be already configured. If not, try [Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+
+- The iac-api Terrafrom module has been wrote with Terraform v0.15.3.
+
+#### Deploy
 Once Elixir docker image has been created, for providing such infrastructure, it's needed to run:
 
 ```
