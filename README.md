@@ -2,7 +2,7 @@
 
 ## <b>Repo description</b>
 
-This a terraform repository for providing a simple Infrastructure for an API application. In this case, will provide the API from the [Elixir API repo](https://github.com/seavba/elixir-api).
+This a terraform repository for providing a simple Infrastructure for an API application in AWS. In this case, will provide the API from the [Elixir API repo](https://github.com/seavba/elixir-api).
 
 The Infrastructure provided by this repo consists on an AWS ECS container over an AWS Fargate cluster serving an API application through an AWS ALB, which it´s reached from the Internet thorugh the AWS IG. The container gets the data from an AWS RDS PGSQL database.
 
